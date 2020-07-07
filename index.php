@@ -1,8 +1,9 @@
 <?php
 require_once "includes/conecta.php";
 require_once "includes/header.php";//faz a inclusão do arquivo de cabeçalho
+require_once "includes/footer.php";////faz a inclusão do arquivo de rodapé
     $pagina = @$_GET['pagina'];
-    if(empty($pagina)){//verifica se tem algo na url
+        if(empty($pagina)){//verifica se tem algo na url
         require_once "arquivos/home.php";//se não tiver carrega a home.php
     } else {//se existir algo na url
         if(file_exists("arquivos/$pagina.php")) {//testa se existe um arquivo com o valor que veio pela variável página
@@ -11,4 +12,3 @@ require_once "includes/header.php";//faz a inclusão do arquivo de cabeçalho
             require_once "arquivos/404.php";
         }
     }
-require_once "includes/footer.php";////faz a inclusão do arquivo de rodapé
